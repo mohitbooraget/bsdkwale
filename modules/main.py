@@ -81,7 +81,7 @@ async def restart_handler(_, m):
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command(["Leo"]) & filters.user(ADMINS))
+@bot.on_message(filters.command(["mendax"]) & filters.user(ADMINS))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text('Send me **TXT File**♌️')
     input: Message = await bot.listen(editable.chat.id)
@@ -153,7 +153,7 @@ async def account_login(bot: Client, m: Message):
                 
                 cmd = f'yt-dlp "{url}" -o "{name}.mp4"'
             try:  
-                cc = f'**Vid_ID:** {str(count).zfill(3)}\n\n**Title » {name}.mkv\n\n** **Batch** » **{raw_text0}**\n\n**Downloaded By** : **{MR}**'
+                cc = f'**{str(count).zfill(3)}**{name}〔«𝙼𝚎𝚗𝚍𝚊𝚡»〕.mkv\n\n**Bᴀᴛᴄʜ Nᴀᴍᴇ**» `{raw_text0}`\n\n**Dᴏᴡɴʟᴏᴀᴅᴇᴅ Bʏ :** : **{MR}**'
                 Show = f"** Downloading  »**\n\n**Name »** `{name}`\n**Quality »** `Whatever best available`\n\n**URL »** `{url}`"
                 prog = await m.reply_text(Show)
                 res_file = await helper.download_video(url, cmd, name)
@@ -171,6 +171,6 @@ async def account_login(bot: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("**Done Leo♌️**")
+    await m.reply_text("**Done✅**")
 
 bot.run()
