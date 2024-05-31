@@ -11,7 +11,7 @@ OWNER = int(os.environ.get("OWNER", '6594402123'))
 
 try:
     ADMINS=[]
-    for x in (os.environ.get("ADMINS", '5186250641 6436809802 7183515722 6959409818 6233170765').split(',')):
+    for x in (os.environ.get("ADMINS", '5186250641,6436809802,7183515722,6959409818,6233170765').split(',')):
         ADMINS.append(int(x))
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
